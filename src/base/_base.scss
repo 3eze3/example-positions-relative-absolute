@@ -1,0 +1,29 @@
+$colorHeaddings: (
+  "very-dark-purple": rgb(53, 1, 63),
+  "ligth-purple": rgb(146, 84, 156),
+);
+$background-ligth-white: #edecf4;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-size: 100%;
+  background-color: $background-ligth-white;
+}
+h1 {
+  color: map-get($colorHeaddings, "very-dark-purple");
+  font-size: 1.6em;
+  font-weight: 900;
+}
+h2 {
+  color: map-get($colorHeaddings, "ligth-purple");
+  font-size: 1.6em;
+  font-weight: 900;
+}
+input {
+  background-color: transparent;
+}
