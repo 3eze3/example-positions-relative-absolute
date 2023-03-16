@@ -1,0 +1,196 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-size: 100%;
+  background-color: #edecf4;
+}
+
+h1 {
+  color: rgb(53, 1, 63);
+  font-size: 1.6em;
+  font-weight: 900;
+}
+
+h2 {
+  color: rgb(146, 84, 156);
+  font-size: 1.6em;
+  font-weight: 900;
+}
+
+input {
+  background-color: transparent;
+}
+
+.main {
+  padding-block: 2rem;
+  padding-inline: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.main__title {
+  font-size: 3vw;
+  color: #000;
+  text-shadow: 0.1rem 0.1rem 0.2rem #ccc;
+  letter-spacing: 0.05em;
+  margin-bottom: 2rem;
+}
+.main__box {
+  padding: 1rem 3rem 3rem 3rem;
+  width: 100%;
+  min-height: 30rem;
+  background-color: #e7e5f1;
+  box-shadow: 0.2rem 0.2rem 0.4rem #cdccd2 inset, -0.2rem -0.2rem 0.4rem #cfced5 inset;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
+.main__subtitle {
+  font-size: 2.2rem;
+  text-shadow: 0.1rem 0.1rem 0.1rem rgba(64, 1, 57, 0.737);
+  letter-spacing: 0.06em;
+}
+.main__wrapperBox {
+  min-height: 30rem;
+  padding: 1rem;
+  margin-top: 2rem;
+  background-color: #eee;
+  box-shadow: 0.5rem 0.5rem 1rem #cccccc, -0.5rem -0.5rem 1rem rgba(170, 165, 165, 0.4784313725);
+}
+.main__wrapperBox--relative {
+  position: relative;
+}
+.main__description {
+  text-align: center;
+  font-size: 1.3em;
+  letter-spacing: 0.05em;
+  line-height: 1.5;
+  color: #caa234;
+  padding: 1rem;
+  opacity: 0;
+  transition: opacity 1.1s ease-in;
+  -webkit-transition: opacity 1.1s ease-in;
+  -moz-transition: opacity 1.1s ease-in;
+  -ms-transition: opacity 1.1s ease-in;
+  -o-transition: opacity 1.1s ease-in;
+}
+
+.static {
+  position: static;
+}
+
+.main__btn {
+  width: 2rem;
+  height: 2rem;
+}
+.main__btn:checked ~ .main__positionBox {
+  left: calc(50% - 10rem);
+  transition: left 1s ease-in-out;
+  -webkit-transition: left 1s ease-in-out;
+  -moz-transition: left 1s ease-in-out;
+  -ms-transition: left 1s ease-in-out;
+  -o-transition: left 1s ease-in-out;
+}
+.main__btn--removePosition {
+  position: relative;
+  top: -4.83rem;
+  left: 5rem;
+}
+.main__btn--removePosition::after {
+  width: 10rem;
+  position: absolute;
+  left: 2.5rem;
+  top: 0rem;
+  content: "Remover posición relativa al contenedor";
+  font-size: 1.15em;
+  font-weight: 600;
+  color: #9af;
+}
+.main__btn--removePosition:checked + .main__namePosition {
+  color: #9af;
+}
+.main__btn:checked ~ .main__btn--removePosition {
+  visibility: hidden;
+}
+.main__btn:checked ~ .main__positionBox > .main__description {
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -ms-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
+}
+.main__btn:checked + .main__namePosition {
+  color: #9af;
+  text-shadow: 0.3rem 0.1rem 0.2rem rgba(170, 255, 255, 0.6);
+  transition: 0.3s ease-in-out 0.6s;
+  -webkit-transition: 0.3s ease-in-out 0.6s;
+  -moz-transition: 0.3s ease-in-out 0.6s;
+  -ms-transition: 0.3s ease-in-out 0.6s;
+  -o-transition: 0.3s ease-in-out 0.6s;
+  transform: translateY(-2rem);
+  -webkit-transform: translateY(-2rem);
+  -moz-transform: translateY(-2rem);
+  -ms-transform: translateY(-2rem);
+  -o-transform: translateY(-2rem);
+}
+
+.main__namePosition {
+  text-align: center;
+  font-size: 2.5vw;
+  color: #eee;
+  pointer-events: none;
+  letter-spacing: 0.06em;
+  transform: translateY(1.5rem);
+  -webkit-transform: translateY(1.5rem);
+  -moz-transform: translateY(1.5rem);
+  -ms-transform: translateY(1.5rem);
+  -o-transform: translateY(1.5rem);
+  transition: color 0.2s ease-in-out, transform 0.25s ease-out;
+  -webkit-transition: color 0.2s ease-in-out, transform 0.25s ease-out;
+  -moz-transition: color 0.2s ease-in-out, transform 0.25s ease-out;
+  -ms-transition: color 0.2s ease-in-out, transform 0.25s ease-out;
+  -o-transition: color 0.2s ease-in-out, transform 0.25s ease-out;
+}
+
+.main__positionBox {
+  width: 20rem;
+  height: 20rem;
+  top: 2rem;
+  left: 0;
+  margin-bottom: 5rem;
+  transition: left 0.8s ease-in;
+  -webkit-transition: left 0.8s ease-in;
+  -moz-transition: left 0.8s ease-in;
+  -ms-transition: left 0.8s ease-in;
+  -o-transition: left 0.8s ease-in;
+  box-shadow: 1rem 1rem 2rem #cdd, -1rem -1rem 2rem #ddc;
+}
+.main__positionBox--relative {
+  position: relative;
+}
+.main__positionBox--absolute {
+  width: 50rem;
+  background-color: rgb(237, 230, 237);
+  position: absolute;
+  top: 7rem;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/*# sourceMappingURL=style.css.map */
