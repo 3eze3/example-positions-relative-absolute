@@ -1,0 +1,63 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="dist/remove_relative/change_checkbox.js" defer></script>
+    <link rel="stylesheet" href="dist/style.css" />
+    <title>Positions</title>
+  </head>
+  <body>
+    <main class="main">
+      <h1 class="main__title">Ejemplo con positions</h1>
+      <article class="main__box">
+        <h2 class="main__subtitle">Relative:</h2>
+        <div class="main__wrapperBox">
+          <input type="checkbox" class="main__btn" />
+          <h3 class="main__namePosition">Ahora esta en posicion relativa</h3>
+          <div class="main__positionBox main__positionBox--relative">
+            <p class="main__description">
+              La posición relativa respeta el flujo del contenido HTML, por lo
+              que se respeta su espacio inicial y se posiciona tomando de
+              referencia su propio borde.
+            </p>
+          </div>
+          <div class="main__positionBox">
+            <p class="main__description">
+              Como podemos observar, la esta caja no ocupa el espacio de la caja
+              relativa porque es reservado
+            </p>
+          </div>
+        </div>
+      </article>
+      <article class="main__box">
+        <h2 class="main__subtitle">Absolute:</h2>
+        <div class="main__wrapperBox main__wrapperBox--relative">
+          <input type="checkbox" class="main__btn" />
+          <h3 class="main__namePosition">
+            Esta caja esta en position Absoluta
+          </h3>
+          <input type="checkbox" class="main__btn main__btn--removePosition" />
+          <h3 class="main__namePosition">
+            Ahora la caja tomó de referencia al elemento HTML raíz, mira al
+            principio del documento.
+          </h3>
+          <div class="main__positionBox main__positionBox--absolute">
+            <p class="main__description">
+              La posición absoluta en CSS es una técnica de diseño web que
+              permite colocar elementos en una ubicación específica en relación
+              a su contenedor o al elemento HTML raíz. Se utiliza la propiedad
+              "position: absolute" con las coordenadas x e y para definir la
+              posición del elemento.
+            </p>
+            <p class="main__description">
+              Los elementos con posición absoluta no ocupan un espacio en el
+              flujo normal del contenido y pueden superponerse con otros
+              elementos.
+            </p>
+          </div>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>
