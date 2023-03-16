@@ -1,0 +1,26 @@
+@use "../abstrat/mixin" as mixin;
+.main__positionBox {
+  width: 20rem;
+  height: 20rem;
+  top: 2rem;
+  left: 0;
+  margin-bottom: 5rem;
+  transition: left 0.8s ease-in;
+  -webkit-transition: left 0.8s ease-in;
+  -moz-transition: left 0.8s ease-in;
+  -ms-transition: left 0.8s ease-in;
+  -o-transition: left 0.8s ease-in;
+  box-shadow: 1rem 1rem 2rem #cdd, -1rem -1rem 2rem #ddc;
+  &--relative {
+    position: relative;
+  }
+  &--absolute {
+    width: 50rem;
+    background-color: rgb(237, 230, 237);
+    position: absolute;
+    top: 7rem;
+    left: 0;
+    @include mixin.flex();
+    gap: 1rem;
+  }
+}

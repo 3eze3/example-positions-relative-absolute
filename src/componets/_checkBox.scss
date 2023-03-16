@@ -1,0 +1,72 @@
+.main__btn {
+  width: 2rem;
+  height: 2rem;
+  &:checked ~ .main__positionBox {
+    left: calc(50% - 10rem);
+    transition: left 1s ease-in-out;
+    -webkit-transition: left 1s ease-in-out;
+    -moz-transition: left 1s ease-in-out;
+    -ms-transition: left 1s ease-in-out;
+    -o-transition: left 1s ease-in-out;
+  }
+  &--removePosition {
+    position: relative;
+    top: -4.83rem;
+    left: 5rem;
+    &::after {
+      width: 10rem;
+      position: absolute;
+      left: 2.5rem;
+      top: 0rem;
+      content: "Remover posición relativa al contenedor";
+      font-size: 1.15em;
+      font-weight: 600;
+      color: #9af;
+    }
+    &:checked + .main__namePosition {
+      color: #9af;
+    }
+  }
+  &:checked ~ &--removePosition {
+    visibility: hidden;
+  }
+  &:checked ~ .main__positionBox > .main__description {
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+    -webkit-transition: opacity 0.2s ease-in-out;
+    -moz-transition: opacity 0.2s ease-in-out;
+    -ms-transition: opacity 0.2s ease-in-out;
+    -o-transition: opacity 0.2s ease-in-out;
+  }
+  &:checked + .main__namePosition {
+    color: #9af;
+    text-shadow: 0.3rem 0.1rem 0.2rem #aff9;
+    transition: 0.3s ease-in-out 0.6s;
+    -webkit-transition: 0.3s ease-in-out 0.6s;
+    -moz-transition: 0.3s ease-in-out 0.6s;
+    -ms-transition: 0.3s ease-in-out 0.6s;
+    -o-transition: 0.3s ease-in-out 0.6s;
+    transform: translateY(-2rem);
+    -webkit-transform: translateY(-2rem);
+    -moz-transform: translateY(-2rem);
+    -ms-transform: translateY(-2rem);
+    -o-transform: translateY(-2rem);
+  }
+}
+.main__namePosition {
+  text-align: center;
+  font-size: 2.5vw;
+  color: #eee;
+  pointer-events: none;
+  letter-spacing: 0.06em;
+  transform: translateY(1.5rem);
+  -webkit-transform: translateY(1.5rem);
+  -moz-transform: translateY(1.5rem);
+  -ms-transform: translateY(1.5rem);
+  -o-transform: translateY(1.5rem);
+  transition: color 0.2s ease-in-out, transform 0.25s ease-out;
+  -webkit-transition: color 0.2s ease-in-out, transform 0.25s ease-out;
+  -moz-transition: color 0.2s ease-in-out, transform 0.25s ease-out;
+  -ms-transition: color 0.2s ease-in-out, transform 0.25s ease-out;
+  -o-transition: color 0.2s ease-in-out, transform 0.25s ease-out;
+}
